@@ -24,6 +24,13 @@ spec:
         fsGroup: 1001
       containers:
         - name: backend
+          image:
+            resources:
+              requests:
+                storage: "1Gi"
+                memory: "256Mi"
+              limits:
+                memory: "512Mi"
           # Use Digest if provided, otherwise fallback to Tag
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}{{ if .Values.backend.image.digest }}@{{ .Values.backend.image.digest }}{{ end }}"
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
