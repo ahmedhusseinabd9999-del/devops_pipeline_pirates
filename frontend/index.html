@@ -202,7 +202,7 @@
                 showMessage(data.detail || "Error occurred", "error");
             }
         } catch (error) {
-            console.error(error);
+            console.error("Connection Error Details:", error);
             showMessage("Network Error: Is the backend running?", "error");
         }
     }

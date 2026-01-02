@@ -20,6 +20,11 @@ spec:
       containers:
         - name: frontend
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}{{ if .Values.frontend.image.digest }}@{{ .Values.frontend.image.digest }}{{ end }}"
+          resources: 
+            limits:
+              memory: "256Mi"
+            requests:
+              memory: "128Mi"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           volumeMounts:
             - name: nginx-config

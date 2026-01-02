@@ -41,7 +41,7 @@ backend:
     dbUser: "postgres"
     dbName: "pirates_db"
     dbType: "postgres"
-    databaseUrl: "postgresql://postgres:secretpassword@pipeline-pirates-pirates-db:5432/pirates_db"
+    databaseUrl: "postgresql://${DB_USER}:${DB_PASSWORD}@pipeline-pirates-pirates-db:5432/pirates_db"
     sqlalchemyDatabaseUrl: "postgresql://postgres:secretpassword@pipeline-pirates-pirates-db:5432/pirates_db"
 # --- FRONTEND CONFIGURATION ---
 frontend:
